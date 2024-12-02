@@ -1,0 +1,12 @@
+<?php
+/**
+ * @var \Magento\Wishlist\Block\Link $block
+ */
+
+$mediaUrl = $this->helper("Techgroup\Addon\Helper\Data")->getMediaUrl();
+?>
+<a class="wishlist" href="<?php echo $block->getBaseUrl(); ?>wishlist" title="My Wishlist">
+    <img src="<?php echo $mediaUrl; ?>wysiwyg/wishlist.png" class="wishlist-icon">
+    <span class="counter qty"><?= $this->helper(\Magento\Wishlist\Helper\Data::class)->getWishlist()->getItemsCount() ?></span>
+    <span>Wishlist</span>
+</a>

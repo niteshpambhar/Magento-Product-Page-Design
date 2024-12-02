@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+$fontUrl =  $block->getViewFileUrl('css/fonts');
+?>
+<style type="text/css">
+    @font-face {font-display:fallback;font-family:'FontAwesome';src:url('<?php echo $fontUrl; ?>/fontawesome-webfont.eot?v=4.7.0');src:url('<?php echo $fontUrl; ?>/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('<?php echo $fontUrl; ?>/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('<?php echo $fontUrl; ?>/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('<?php echo $fontUrl; ?>/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('<?php echo $fontUrl; ?>/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
+	@font-face {font-family: 'Roboto';src: url('<?php echo $fontUrl; ?>/Roboto-Light.woff2') format('woff2'),url('<?php echo $fontUrl; ?>/Roboto-Light.woff') format('woff');font-weight: 300;font-style: normal;font-display: swap;}
+	@font-face {font-family: 'Roboto';src: url('<?php echo $fontUrl; ?>/Roboto-Medium.woff2') format('woff2'),url('<?php echo $fontUrl; ?>/Roboto-Medium.woff') format('woff');font-weight: 500;font-style: normal;font-display: swap;}
+	@font-face {font-family: 'Roboto';src: url('<?php echo $fontUrl; ?>/Roboto-Bold.woff2') format('woff2'),url('<?php echo $fontUrl; ?>/Roboto-Bold.woff') format('woff');font-weight: 700;font-style: normal;font-display: swap;}
+	@font-face {font-family: 'Roboto';src: url('<?php echo $fontUrl; ?>/Roboto-Regular.woff2') format('woff2'),url('<?php echo $fontUrl; ?>/Roboto-Regular.woff') format('woff');font-weight: 400;font-style: normal;font-display: swap;}
+    @font-face {font-family:'icons-blank-theme';src:url('<?php echo $block->getViewFileUrl('fonts/Blank-Theme-Icons'); ?>/Blank-Theme-Icons.woff2') format("woff2"),url('<?php echo $block->getViewFileUrl('fonts/Blank-Theme-Icons'); ?>/Blank-Theme-Icons.woff') format("woff");font-weight:700;font-style:normal;font-display:swap}
+</style>

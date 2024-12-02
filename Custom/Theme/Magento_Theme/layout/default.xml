@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock> 
+
+		<referenceContainer name="after.body.start">
+			<block class="Magento\Framework\View\Element\Template" name="customfont" template="Magento_Theme::html/fonts.phtml" />	
+			<block class="Magento\Framework\View\Element\Template" name="customhead" template="Magento_Theme::html/header/head.phtml" />
+		</referenceContainer>
+		
+		<!--/*** Header ***/-->
+		<referenceContainer name="header.panel" label="Page Header Panel" htmlTag="div">
+			<block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+				<arguments>
+					<argument name="css_class" xsi:type="string">header-links</argument>
+				</arguments>
+			</block>
+		</referenceContainer>
+		
+		<move element="header.panel" destination="head.links" before="-" />
+
+		<referenceContainer name="header-wrapper" htmlClass="header-content">
+			<container htmlClass="container" htmlTag="div" before="-">
+				<container htmlClass="row" htmlTag="div" before="-">
+					<container name="head.logo" htmlClass="col-lg-2 col-md-2 col-sm-10 col-8" htmlTag="div" before="-"/>
+					<container name="head.nav" htmlClass="col-lg-10 col-md-10 col-sm-2 col-4 header-nav" htmlTag="div">
+						<container htmlClass="catalog-topnav-custom" htmlTag="div">
+							<block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav.custom" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="-"/>
+						</container>
+						<container name="head.search" htmlClass="header-search" htmlTag="div"/>
+						<container htmlClass="account-nav" htmlTag="div">
+							<container name="head.links" htmlClass="header-account-links" htmlTag="div" />
+						</container>
+						<container name="head.cart" htmlClass="header-cart" htmlTag="div"/>
+						<container name="head.wishlist" htmlClass="header-wishlist" htmlTag="div">
+							<block class="Magento\Wishlist\Block\Link" name="wishlist-icon" template="Magento_Theme::html/header/wishlist.phtml" before="-"/>
+						</container>
+					</container>
+				</container>
+			</container>
+		</referenceContainer>
+
+		<move element="logo" destination="head.logo" before="-" />
+		<move element="top.search" destination="head.search" before="-" />
+		<move element="minicart" destination="head.cart" before="-" />
+		<!--/*** End Header ***/-->
+
+		<!--/*** Content ***/-->
+		<referenceContainer name="main.content" htmlTag="main" htmlId="maincontent"/>
+		<move element="breadcrumbs" destination="main.content" before="-" />
+		<!--/*** End Content ***/-->
+
+		<!--/*** Footer ***/-->
+		<referenceContainer name="footer_links" remove="true"/>
+		<referenceContainer name="report.bugs" remove="true"/>
+		<referenceContainer name="footer-container" htmlClass="footer-wrapper" htmlTag="div">
+			<container name="footer.top" label="Footer Top" htmlTag="div" htmlClass="footer-top" before="-">
+				<block class="Magento\Cms\Block\Block" name="footer-top">
+					<arguments>
+						<argument name="block_id" xsi:type="string">footer-top</argument>
+					</arguments>
+				</block>
+			</container>
+			<container name="footer.main.content" label="Footer main content" htmlTag="div" htmlClass="footer-main-content" after="footer.top">
+				<block class="Magento\Cms\Block\Block" name="footer-main-content">
+					<arguments>
+						<argument name="block_id" xsi:type="string">footer-main-content</argument>
+					</arguments>
+				</block>
+			</container>
+			<container name="footer.bottom" label="Footer Bottom" htmlTag="div" htmlClass="footer-bottom" after="-">
+				<container name="footer.bottom.container" htmlTag="div" htmlClass="container" before="-">
+					<block class="Magento\Cms\Block\Block" name="payment-image">
+					<arguments>
+						<argument name="block_id" xsi:type="string">payment-image</argument>
+					</arguments>
+				</block>
+				</container>
+			</container>
+		</referenceContainer>
+
+        <referenceBlock name="footer" remove="true"/>
+        <referenceBlock name="breadcrumbs" remove="true" />
+		<!--/*** End Footer ***/-->
+	</body>
+</page>

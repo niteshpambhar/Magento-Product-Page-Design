@@ -1,0 +1,17 @@
+<?php
+/**
+ * Product view template
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php
+$_product = $block->getProduct();
+$priceHelper = $this->helper('Magento\Framework\Pricing\Helper\Data');
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+?>
+<div class="payment-info">Get 4 interest-free payment of <?= $priceHelper->currency($_product->getFinalPrice(), true, false);  ?> with Klarna</div>
+
+<div class="chat-now">Speak to Personal Stylist CHAT NOW</div>
