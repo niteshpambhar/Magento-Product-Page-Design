@@ -10,11 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<css src="css/font-awesome.min.css" />
 		<css src="css/bootstrap.min.css"/>
-
-		<!-- opensans font remove -->
-		<remove src="Magento_Theme::fonts/opensans/light/opensans-300.woff2"/>
-        <remove src="Magento_Theme::fonts/opensans/regular/opensans-400.woff2"/>
-        <remove src="Magento_Theme::fonts/opensans/semibold/opensans-600.woff2"/>
-        <remove src="Magento_Theme::fonts/opensans/bold/opensans-700.woff2"/>
+		<css src="css/custom.css"/>
+		<script src="js/custom.js"/>
     </head>
 </page>
